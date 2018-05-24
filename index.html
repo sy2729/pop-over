@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pop-Over</title>
+
+	<style>
+
+		.container {
+			position: relative;
+			margin: 20px;
+		}
+		
+		.pop {
+			height: 50px;
+			width: 200px;
+			color: #fff;
+			border: 1px solid #222;
+			background: rgba(0, 0, 0, 0.5);
+			border-radius: 4px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			left: 57px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="pop">
+			This is a pop-pover window
+		</div>
+		<button id="button">
+			click me
+		</button>
+
+
+
+		<script src="./jq.js"></script>
+		<script>
+			$('.pop').hide();
+			$("#button").on('click', (e)=> {
+				$('.pop').show();
+				setTimeout((e)=> {
+					$(document).one('click', function() {
+						$('.pop').hide();
+					})
+				}, 0)
+			})
+
+			// $('.container').on('click', function(e){
+			// 	e.stopPropagation();
+			// })
+
+			
+		</script>
+	</div>
+</body>
+</html>
