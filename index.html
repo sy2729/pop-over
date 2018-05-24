@@ -44,16 +44,16 @@
 			$('.pop').hide();
 			$("#button").on('click', (e)=> {
 				$('.pop').show();
-				setTimeout((e)=> {
+				setTimeout(function() {
 					$(document).one('click', function() {
 						$('.pop').hide();
 					})
 				}, 0)
 			})
 
-			// $('.container').on('click', function(e){
-			// 	e.stopPropagation();
-			// })
+			$('.container').on('click', function(e){
+				e.stopPropagation();
+			})
 
 			
 		</script>
